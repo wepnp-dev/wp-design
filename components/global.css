@@ -1,0 +1,124 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*  */
+:root {
+  --admin-section-space: 48px;
+  --admin-left-panel-width: 240px;
+  --admin-left-panel-collapse-width: var(--admin-section-space);
+
+  --wp-color-primary: #4E63E3;
+  --wp-color-primary-light: #b3d5ff;
+  --wp-color-darken: #465978;
+  --wp-color-disable: #8D98BA;
+  --wp-color-light: #F2F2F2;
+  --wp-color-border: #E0E5F2;
+  --wp-color-icon-button: #00000075;
+
+  --wp-color-black: #111111;
+  --wp-color-white: #F3F3F3;
+
+  --wp-color-bg: #FFFFFF;
+
+  --wp-gap-0: 4px;
+  --wp-gap-1: 8px;
+  --wp-gap-2: 16px;
+  --wp-gap-3: 24px;
+
+  --wp-border: 1px solid var(--wp-color-border);
+
+  --wp-border-radius: 4px;
+  --wp-border-radius-secondary: 8px;
+
+  --wp-padding: 8px 20px;
+  --wp-padding-small: 4px 12px;
+  --wp-padding-big: 12px 24px;
+  --wp-padding-container: 32px;
+  --wp-padding-icon-button: 10px 16px;
+
+  --wp-font-size-smaller: 12px;
+  --wp-font-size-small: 14px;
+  --wp-font-size: 16px;
+  --wp-font-size-big: 18px;
+  --wp-font-size-bigger: 20px;
+  --wp-font-size-large: 24px;
+  --wp-font-size-larger: 32px;
+
+
+  --wp-font-weight-regular: 450;
+  --wp-font-weight-medium: 550;
+  --wp-font-weight: 550;
+  --wp-font-weight-semibold: 650;
+  --wp-font-weight-bold: 700;
+
+  --wp-input-width: 280px;
+
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+svg {
+  max-width: 32px;
+  max-height: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1rem;
+  color: var(--wp-color-darken);
+}
