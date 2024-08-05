@@ -1,25 +1,65 @@
 {
-  "name": "wp-design",
-  "version": "1.0.0",
+  "name": "@wepnp-dev/wp-design",
+  "version": "0.0.2",
   "description": "WEPNP 디자인 시스템 컴포넌트 라이브러리",
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "WEPNP",
+    "Next.js",
+    "React.js",
+    "Components"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "npm run build:babel && npm run copy-css && npm run minify-css",
+    "build:babel": "npx babel components --extensions \".ts,.tsx\" --out-dir dist",
+    "copy-css": "copyfiles -u 1 \"components/**/*.module.css\" dist",
+    "minify-css": "postcss dist/**/*.css --dir dist",
+    "prepublishOnly": "npm run build"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wepnp-dev/wp-design.git"
+  },
+  "export": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*"
+  },
+  "author": "WEPNP",
   "license": "ISC",
-  "dependencies": {
-    "next": "^14.2.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5.5.4",
-    "@types/node": "^22.1.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0"
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "copyfiles": "^2.4.1",
+    "cssnano": "^7.0.4",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8.4.40",
+    "postcss-cli": "^11.0.0",
+    "typescript": "^5"
   }
 }
