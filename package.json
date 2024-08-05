@@ -16,10 +16,10 @@
     "Components"
   ],
   "scripts": {
-    "build": "npm run build:babel && npm run copy-css && npm run minify-css",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npm run build:babel && npm run minify-css",
     "build:babel": "npx babel components --extensions \".ts,.tsx\" --out-dir dist",
-    "copy-css": "copyfiles -u 1 \"components/**/*.module.css\" dist",
-    "minify-css": "postcss dist/**/*.css --dir dist",
+    "minify-css": "postcss components/**/*.module.css -o dist/styles.min.css",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -60,6 +60,7 @@
     "eslint-config-next": "14.2.5",
     "postcss": "^8.4.40",
     "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
     "typescript": "^5"
   }
 }

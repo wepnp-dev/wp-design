@@ -1,3 +1,3 @@
 import Button from "./button/Button";
-
-export { Button };
+import Select from "./select/Select";
+export { Button, Select };
